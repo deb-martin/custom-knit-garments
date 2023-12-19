@@ -1,0 +1,28 @@
+# enter body measurements and heights here in cm
+body={
+	"name":			"Debra Martin",
+	"floor":			{"meas":80,	"height":-105},
+	"belowCalves":	{"meas":80,	"height":-88},
+	"aboveCalves":	{"meas":83,	"height":-73},
+	"belowKnees":		{"meas":83,	"height":-67},
+	"aboveKnees":		{"meas":93,	"height":-57},
+	"midThighs":		{"meas":100,	"height":-44},
+	"fullThighs":		{"meas":111,	"height":-40},
+	"seatDepth":		{"meas":112,	"height":-27},
+	"lowHip":			{"meas":110,	"height":-17},
+	"highHip":		{"meas":98,	"height":-12},
+	"waist":			{"meas":77,	"height":0},
+	"underBust":		{"meas":84,	"height":10},
+	"fullBust":		{"meas":97,	"height":19},
+	"highBust":		{"meas":90,	"height":29},	# 8cm is half body depth at highest armpit which is also highBust on me 22cm down from shoulder at neck 29 + 22 = 51
+	"underArm1":		{"meas":40,	"height":29},	# across chest
+	"underArm2":		{"meas":34,	"height":31},	#across chest
+	"underArm3":		{"meas":32,	"height":43},	#
+	"outerShoulder":	{"meas":96,	"height":38},	# outer shoulder
+	"shoulderNeck":	{"meas":38,	"height":47},	# shoulder length is 17.5 cm delta height is 9 cm slope is  ((17.5)^2 - (9)^2))^0.5 =15
+	"frontNeck":			{"meas":38,	"height":36},
+	"backNeck":			{"meas":38,	"height":44}
+	}
+
+
+
