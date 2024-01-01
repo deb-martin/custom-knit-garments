@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="787510df-b49f-44f6-a052-c922ea8caec7" name="Changes" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/custom_knit_garments.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot_body.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_body.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/points_and_segs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testplot.svg" beforeDir="false" afterPath="$PROJECT_DIR$/testplot.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +89,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704063121902</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1704127204156</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704127204156</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
