@@ -1,7 +1,7 @@
 # enter body measurements and heights here in cm
 # figure out a way to pass the person's name
 person = "Debra Martin"
-body = {
+body_data = {
 	# "name":			"Debra Martin",
 	"floor":			{"meas": 80,		"height": -105,	"circumferential": True},
 	"belowCalves":		{"meas": 80,		"height": -88,	"circumferential": True},
