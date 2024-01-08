@@ -45,7 +45,6 @@ class Seg:
         return x_intercepts
 
 
-# TODO: to eliminate warnings, should I consider using a constructor here and calling a super init in subclasses?
 class Shape:
     """
     class Shape has no init because it is used as a super class solely to define methods for all
@@ -155,33 +154,6 @@ class Garment:
     a str called style which is the name of the garment style
     a float called hem_length which is the length of the hem in centimeters.
     """
-
-    # TODO: change to reflect that the pieces come from the required_pattern_pieces dictionary
-
-    def add_to_subplot(self, subplot):  # sets artists for body plots
-        for piece in self.pattern_pieces:
-            line_color = "magenta"
-            line_style = "--"
-            if self.pattern_pieces[piece] is not None:
-                if piece == "front":
-                    line_color = "blue"
-                    line_style = ":"
-                if piece == "back":
-                    line_color = "green"
-                    line_style = "-."
-                subplot.plot(self.pattern_pieces[piece].x_vals,
-                             self.pattern_pieces[piece].y_vals,
-                             color=line_color,
-                             linewidth=1.0,
-                             linestyle=line_style,
-                             marker="o",
-                             markersize=1.5,
-                             alpha=0.5,
-                             label=piece)
-                #                        scalex=True,
-                #                        scaley=True)
-                subplot.legend()
-                subplot.set_title(self.style + " for " + self.person)
 
     def add_garment_to_subplot(self, subplot):  # sets artists for body plots
         for piece in self.style:
