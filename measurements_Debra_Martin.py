@@ -16,8 +16,9 @@ body_data = {
 	"waist":			{"meas": 77,		"height": 0,	"circumferential": True},
 	"underBust":		{"meas": 84,		"height": 10,	"circumferential": True},
 	"fullBust":			{"meas": 97,		"height": 19,	"circumferential": True},
-	"highBust":			{"meas": 90,		"height": 29,	"circumferential": True}, 	# 8cm is half body depth at highest armpit which is also highBust on me 22cm down from shoulder at neck 29 + 22 = 51
-	"underArm1":		{"meas": 40,		"height": 29,	"circumferential": False}, 	# across chest
+	"highBust":			{"meas": 90,		"height": 29,	"circumferential": True},
+	"underArm0":		{"meas": 45,		"height": 29,	"circumferential": False},  # at the armpit which is also highBust on me 22cm down from shoulder at neck 29 + 22 = 51
+	"underArm1":		{"meas": 40,		"height": 29,	"circumferential": False}, 	# across chest at armpit height
 	"underArm2":		{"meas": 34,		"height": 31,	"circumferential": False}, 	# across chest
 	"underArm3":		{"meas": 32,		"height": 43,	"circumferential": False},
 	"outerShoulder":	{"meas": 96,		"height": 38,	"circumferential": True}, 	# outer shoulder
