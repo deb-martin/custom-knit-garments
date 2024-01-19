@@ -136,7 +136,6 @@ class Body(Shape):
                      alpha=1.0,
                      label="body")
         subplot.legend()
-        subplot.grid(visible=True, which='both', color='grey', linestyle='-.', linewidth=0.35)
         # subplot.set_title("Garment for " + self.person)
 
 
@@ -184,12 +183,12 @@ class PDF(fpdf.FPDF):
             align="C",
             fill=False
         )
-        self.image(x=110, y=40, name=image, w=95)
+        self.image(x=10, y=20, name=image, w=196)
         self.set_font(family="Brazilia", style="", size=14)
-        self.set_y(50)
+        self.set_y(210)
         self.multi_cell(
-            w=95,
-            h=10,
+            w=196,
+            h=8,
             text=cover_text,
             border=0,
             new_x="LMARGIN",
@@ -577,31 +576,36 @@ class Garment:
         subplot.legend()
 
     def populate_and_save_plot_canvas(self):
-        plot_canvas = matplotlib.figure.Figure(figsize=[8, 10])
+        plot_canvas = matplotlib.figure.Figure(figsize=[8, 8])
         subplots = [plot_canvas.add_subplot(2, 2, x) for x in range(1, 5)]
         for x in range(1, 5):
-            subplots[x - 1].axis(xmin=-80, xmax=80)
-            subplots[x - 1].axis(ymin=-120, ymax=80)
-            subplots[x - 1].xaxis.set_major_locator(matplotlib.ticker.LinearLocator(17))
-            subplots[x - 1].yaxis.set_major_locator(matplotlib.ticker.LinearLocator(21))
+            subplots[x - 1].set_aspect(1)
             subplots[x - 1].tick_params(labelsize=8, colors='black')
             subplots[x - 1].tick_params(axis='x', labelrotation=90)
+            subplots[x - 1].grid(visible=True, which='both', color='olive', linestyle='-.', linewidth=0.35)
+            subplots[x - 1].xaxis.set_major_locator(matplotlib.ticker.MultipleLocator(10))
+            subplots[x - 1].yaxis.set_major_locator(matplotlib.ticker.MultipleLocator(10))
             if x != 4:
+                subplots[x - 1].axis(xmin=-80, xmax=80)
+                subplots[x - 1].axis(ymin=-120, ymax=80)
+                subplots[x - 1].xaxis.set_major_locator(matplotlib.ticker.LinearLocator(numticks=9))
+                subplots[x - 1].yaxis.set_major_locator(matplotlib.ticker.LinearLocator(11))
                 self.body_shape.add_to_subplot(subplot=subplots[x - 1])
         subplots[0].set_title("Front and Back over Body Map")
         subplots[1].set_title("Front over Body Map")
         subplots[2].set_title("Back over Body Map")
         subplots[3].set_title("Front and Back")
-        subplots[0].set_ylabel("height in cm", color='black')
+        subplots[0].set_ylabel("waistline at zero", color='black')
+        subplots[2].set_ylabel("height in cm", color='black')
         subplots[2].set_xlabel("width in cm", color='black')
+        subplots[3].set_xlabel("body center at zero", color='black')
         self.add_garment_to_subplot(subplot=subplots[0], piece="Front")
         self.add_garment_to_subplot(subplot=subplots[0], piece="Back")
         self.add_garment_to_subplot(subplot=subplots[1], piece="Front")
         self.add_garment_to_subplot(subplot=subplots[2], piece="Back")
         self.add_garment_to_subplot(subplot=subplots[3], piece="Front")
         self.add_garment_to_subplot(subplot=subplots[3], piece="Back")
-        plot_canvas.savefig(fname=f"./results/{self.title}.svg",
-                            format="svg")
+        plot_canvas.savefig(fname=f"./results/{self.title}.svg", format="svg", transparent=True)
         # self.plot_stitches("front", subplots[1])
         # self.plot_stitches("back", subplots[2])
         # stitch_plot_canvas = matplotlib.figure.Figure(figsize=[10, 10])
@@ -618,18 +622,24 @@ class Garment:
                       for x in self.style[pattern_piece_name]["needle_chart"][row]["all"]]
             gauge = self.required_pattern_pieces[pattern_piece_name]['gauge']
             ratio = gauge[0] / gauge[1]
-            stitch_plot_canvas = matplotlib.figure.Figure(figsize=[8, 14 / ratio])
+            stitch_plot_canvas = matplotlib.figure.Figure(figsize=[8, 10 / ratio])
+            # stitch_plot_canvas = matplotlib.figure.Figure(figsize=[8, 14 / ratio])
             stitch_plot = stitch_plot_canvas.add_subplot(111)
-            stitch_plot.axis(xmin=-100, xmax=100)
-            stitch_plot.axis(ymin=-10, ymax=450)
-            stitch_plot.xaxis.set_major_locator(matplotlib.ticker.LinearLocator(21))
-            stitch_plot.yaxis.set_major_locator(matplotlib.ticker.LinearLocator(47))
+            # stitch_plot.axis(xmin=-100, xmax=100)
+            # stitch_plot.axis(ymin=-10, ymax=450)
+            # stitch_plot.xaxis.set_major_locator(matplotlib.ticker.LinearLocator(21))
+            # stitch_plot.yaxis.set_major_locator(matplotlib.ticker.LinearLocator(47))
+            # stitch_plot.xaxis.set_minor_locator(matplotlib.ticker.AutoMinorLocator(5))
+            # stitch_plot.yaxis.set_minor_locator(matplotlib.ticker.AutoMinorLocator(5))
+            stitch_plot.xaxis.set_major_locator(matplotlib.ticker.MultipleLocator(10))
+            stitch_plot.yaxis.set_major_locator(matplotlib.ticker.MultipleLocator(10))
             # stitch_plot.xaxis.set_minor_locator(matplotlib.ticker.AutoMinorLocator(5))
             stitch_plot.yaxis.set_minor_locator(matplotlib.ticker.AutoMinorLocator(5))
             stitch_plot.tick_params(labelsize=8, colors='black')
             stitch_plot.tick_params(axis='x', labelrotation=90)
             stitch_plot.set_xlabel("machine needles", color='black')
             stitch_plot.set_ylabel("row", color='black')
+            stitch_plot.set_aspect(1)
             stitch_plot.plot(x_vals,
                              y_vals,
                              marker='^',
@@ -642,8 +652,10 @@ class Garment:
             stitch_plot.legend()
             stitch_plot.grid(visible=True, which='major', color='grey', linestyle='-', linewidth=0.35)
             stitch_plot.grid(visible=True, which='minor', color='grey', linestyle='-.', linewidth=0.15)
+            stitch_plot.set_title(f"{pattern_piece_name} Machine Needle Map by Row")
             stitch_plot_canvas.savefig(fname=f"./results/{self.style_name} {pattern_piece_name} for {self.person} "
-                                             f"at {self.gauge_string} stitch plot.svg", format="svg")
+                                             f"at {self.gauge_string} stitch plot.svg", format="svg",
+                                       transparent=True)
             if __name__ == "__main__":
                 print(f"{self.style_name} {pattern_piece_name} for {self.person} at {self.gauge_string} "
                       f"stitch plot.svg saved to results")
