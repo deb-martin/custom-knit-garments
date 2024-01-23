@@ -1,9 +1,9 @@
 
 axes.titlesize:     16               # font size of the axes title
 figure.figsize:     8, 8              # figure size in inches
-figure.facecolor:   999999            # figure face color
+figure.facecolor:   EEEEEE            # figure face color
 figure.edgecolor:   FC90CE           # figure edge color
-savefig.facecolor:  white             # figure face color when saving
+savefig.facecolor:  EEEEEE             # figure face color when saving
 savefig.edgecolor:  FC90CE            # figure edge color when saving
 savefig.format:     svg               # {png, ps, pdf, svg}
 savefig.bbox:       tight             # {tight, standard}
@@ -11,7 +11,7 @@ savefig.pad_inches: 0.1               # padding to be used, when bbox is set to 
 lines.linestyle:    solid               # no line
 lines.marker:       "h"              # the default marker
 lines.markerfacecolor: FFFFFF00      # the default marker face color
-lines.markeredgecolor: FC90CE66      # the default marker edge color
+lines.markeredgecolor: 888888      # the default marker edge color
 lines.markeredgewidth: 0.5           # the line width around the marker symbol
 lines.markersize:      2             # marker size, in points
 axes.prop_cycle: cycler('color', ['fc90ceaa', '17becfaa', '9467bdaa', 'aabb00aa', 'ffff00aa', 'ffcc00aa'])
@@ -35,11 +35,11 @@ ytick.labelsize:    xx-small         # font size of the y tick labels
 axes.grid:          True             # display grid or not
 axes.grid.axis:     both             # which axis the grid should apply to
 axes.grid.which:    both             # grid lines at {major, minor, both} ticks
-grid.color:         888888           # grid color
+grid.color:         FFFFFF           # grid color
 grid.linestyle:     solid            # solid
-grid.linewidth:     0.5              # in points
-grid.alpha:         0.5              # transparency, between 0.0 and 1.0
-axes.facecolor:     FFFFFF           # axes background color
+grid.linewidth:     1              # in points
+grid.alpha:         1              # transparency, between 0.0 and 1.0
+axes.facecolor:     EEEEEE           # axes background color
 axes.edgecolor:     888888           # axes edge color
 #axes.linewidth:     0.8     # edge line width
 #axes.titlelocation: center  # alignment of the title: {left, right, center}

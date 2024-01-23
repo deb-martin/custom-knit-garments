@@ -8,14 +8,14 @@ savefig.edgecolor:  FC90CE            # figure edge color when saving
 savefig.format:     svg               # {png, ps, pdf, svg}
 savefig.bbox:       tight             # {tight, standard}
 savefig.pad_inches: 0.1               # padding to be used, when bbox is set to 'tight'
-lines.linestyle:    ""               # no line
+lines.linestyle:   solid             # solid line
 lines.marker:       "h"              # the default marker
 lines.markerfacecolor: FFFFFF00      # the default marker face color
 lines.markeredgecolor: FC90CE66      # the default marker edge color
 lines.markeredgewidth: 0.5           # the line width around the marker symbol
-lines.markersize:      5             # marker size, in points
+lines.markersize:      2             # marker size, in points
 legend.loc:         1                # legend position
-legend.markerscale: 5.0              # the relative size of legend markers vs. original
+legend.markerscale: 1              # the relative size of legend markers vs. original
 legend.fontsize:    x-small          # int or {'xx-small', 'x-small', 'small', 'medium', 'large', 'x-large', 'xx-large'}
 ytick.minor.left:   False            # draw y axis left minor ticks
 xtick.color:        888888           # x tick color
